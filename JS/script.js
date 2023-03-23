@@ -68,14 +68,14 @@ nextBtn.addEventListener("click", function () {
 
         itemsArray[activeItemIndex].classList.add("active");
 
-        if (activeItemIndex === itemsArray.length - 1) {
-            nextBtn.classList.add("hidden");
-        }
+        // if (activeItemIndex === itemsArray.length - 1) {
+        //     nextBtn.classList.add("hidden");
+        // }
     }
 });
 
 //Logica prevBtn
-prevBtn.classList.add("hidden");
+// prevBtn.classList.add("hidden");
 
 prevBtn.addEventListener("click", function () {
     nextBtn.classList.remove("hidden");
@@ -86,8 +86,8 @@ prevBtn.addEventListener("click", function () {
         activeItemIndex--;
 
         itemsArray[activeItemIndex].classList.add("active");
-        if (activeItemIndex === 0) {
-            prevBtn.classList.add("hidden")
-        }
+        // if (activeItemIndex === 0) {
+        //     prevBtn.classList.add("hidden")
+        // }
     }
 });
