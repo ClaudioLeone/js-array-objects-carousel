@@ -12,43 +12,54 @@ for (let i = 0; i < imagesArray.length; i++) {
 
     itemsContainer.innerHTML += sliderItem;
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Logica scorrimento immagini automatico a tempo///////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-//Logica scorrimento immagini automatico a tempo
-const itemsArray = document.getElementsByClassName("item");
-let activeItemIndex = 0;
+// const itemsArray = document.getElementsByClassName("item");
+// let activeItemIndex = 0;
 
-itemsArray[activeItemIndex].classList.add("active");
-console.log(activeItemIndex + 1);           // Inizio numerazione foto
+// itemsArray[activeItemIndex].classList.add("active");
+// console.log(activeItemIndex + 1);           // Inizio numerazione foto
 
-const nextPhotoTimer = setInterval(function () {
-    console.log(activeItemIndex + 2);       // Aggiornamento numerazione foto
+// const nextPhotoTimer = setInterval(function () {
+//     console.log(activeItemIndex + 2);       // Aggiornamento numerazione foto
 
-    itemsArray[activeItemIndex].classList.remove("active");
-    activeItemIndex++;
+//     itemsArray[activeItemIndex].classList.remove("active");
+//     activeItemIndex++;
 
-    document.querySelector(".prev").classList.remove("hidden")
-    itemsArray[activeItemIndex].classList.add("active");
+//     document.querySelector(".prev").classList.remove("hidden")
+//     itemsArray[activeItemIndex].classList.add("active");
 
-    if (activeItemIndex === itemsArray.length - 1) {
-        document.querySelector(".next").classList.add("hidden")
-        clearInterval(nextPhotoTimer);
+//     if (activeItemIndex === itemsArray.length - 1) {
+//         document.querySelector(".next").classList.add("hidden")
+//         clearInterval(nextPhotoTimer);
 
-        setTimeout(() => {
-            console.log("Presentazione terminata");
-        }, 2000);
+//         setTimeout(() => {
+//             console.log("Presentazione terminata");
+//         }, 2000);
 
-        setTimeout(() => {
-            alert("La presentazione si è conclusa, ricaricare la pagina per visionarla nuovamente.");
-        }, 3000);
-    }
-}, 3000);
+//         setTimeout(() => {
+//             alert("La presentazione si è conclusa, ricaricare la pagina per visionarla nuovamente.");
+//         }, 3000);
+//     }
+// }, 3000);
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //Logica nextBtn
+
 const prevBtn = document.querySelector(".prev");
+prevBtn.classList.remove("hidden");
 const nextBtn = document.querySelector(".next");
 
+const itemsArray = document.getElementsByClassName("item");
+itemsArray[0].classList.add("active");
+let activeItemIndex = 0;
+
 nextBtn.addEventListener("click", function () {
-    prevBtn.classList.remove("hidden")
+    prevBtn.classList.remove("hidden");
 
     if (activeItemIndex < (itemsArray.length - 1)) {
         itemsArray[activeItemIndex].classList.remove("active");
